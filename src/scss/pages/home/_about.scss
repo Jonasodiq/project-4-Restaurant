@@ -1,0 +1,76 @@
+@use '../../components/buttons' as button;
+@use '../../components/details';
+
+.about {
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    padding: var(--section-gap) 0;
+
+    &__inner {
+        grid-column: inner;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--gap-l);
+        padding: 0 var(--gap-l);
+        align-items: center;
+    }
+
+    &__image {
+        margin: 0;
+        position: relative;
+
+        img {
+            display: block;
+            // position: relative;
+            // z-index: 2;
+        }
+
+        .black-box {
+            right: calc( var(--gap-l) * -1 );
+            bottom: calc( var(--gap-l) * -1 );
+            z-index: -1;
+        }
+    }
+
+    &__title {
+        margin-top: 0;
+        @include details.separator;
+    }
+
+    &__excerpt {
+        color: var(--color-dark-600);
+        p {
+            margin: 0;
+
+            & + p {
+                margin-top: 1rem;
+            }
+        }
+    }
+
+    &__footer {
+        margin-top: var(--gap-l);
+    }
+
+    &__buttons {
+        display: flex;
+        gap: var(--gap-m);
+    }
+
+    &__button {
+        @include button.default(
+            $color: var(--color-dark), 
+            $border-color: var(--color-dark-900),
+            $hover-background: var(--color-accent-800)
+        );
+    }
+
+}
+
+.black-box {
+    @include details.frame;
+    background-color: var(--color-dark);
+    width: 333px;
+    height: 333px;
+    position: absolute;
+}

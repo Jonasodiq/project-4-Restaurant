@@ -1,0 +1,91 @@
+@use '../components/buttons' as button;
+
+.site-header {
+    position: fixed;
+    z-index: 999;
+    height: 100px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+
+    &__content {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: var(--gap-m);
+    }
+
+    &__button {
+        @include button.default;
+    }
+
+}
+
+.menu-button {
+    height: 26px;
+    width: 26px;
+    position: relative;
+    background: none;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+
+    &:focus, &--close {
+
+        .menu-button__hamburger {
+
+            transition: transform 0.2s 0.2s;
+            transform: rotate(45deg) translate(-50%, -50%);
+
+            &:before {
+                transition: top 0.2s, transform 0.2s 0.2s;
+                transform: rotate(90deg);
+                top: 0;
+            }
+
+            &:after {
+                transition: width 0.2s;
+                width: 0;
+            }
+
+        }
+
+    }
+
+    &__hamburger {
+
+        transform-origin: left top;
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transition: transform 0.2s;
+        transform: translate(-50%, -50%) rotate(0);
+        background-color: var(--color-accent);
+
+        &:before, &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -8px;
+            height: 1px;
+            width: 100%;
+            background-color: inherit;
+        }
+
+        &:before {
+            transition: top 0.2s 0.2s, transform 0.2s;
+        }
+
+        &:after {
+            top: 8px;
+            width: 70%;
+            transition: width 0.2s 0.2s;
+        }
+
+    }
+}
