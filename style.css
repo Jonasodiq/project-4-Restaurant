@@ -97,6 +97,7 @@ h6 {
 
 p {
   line-height: var(--line-height);
+  color: var(--color-dark-600);
 }
 
 a {
@@ -110,6 +111,7 @@ a:hover {
 
 li {
   line-height: var(--line-height);
+  color: var(--color-dark-600);
 }
 
 .site-header {
@@ -281,9 +283,6 @@ li {
   margin-top: var(--gap-m);
   margin-bottom: var(--gap-m);
 }
-.about__excerpt {
-  color: var(--color-dark-600);
-}
 .about__excerpt p {
   margin: 0;
 }
@@ -331,6 +330,84 @@ li {
   left: 12px;
   right: 12px;
   opacity: 0.34;
+}
+
+.food-menu {
+  background-color: var(--color-accent-700);
+  display: grid;
+  grid-template-columns: var(--grid-container);
+  padding: var(--section-gap) 0;
+}
+.food-menu__inner {
+  position: relative;
+  grid-column: inner;
+  background-color: var(--color-light);
+  text-align: center;
+  padding: var(--section-gap) 2rem;
+}
+.food-menu__inner::after {
+  content: "";
+  position: absolute;
+  display: block;
+  border: 1px solid var(--color-dark);
+  top: 12px;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  opacity: 0.34;
+}
+.food-menu__content {
+  position: relative;
+  z-index: 2;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+.food-menu__title {
+  margin-top: 0;
+}
+.food-menu__title:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 64px;
+  background-color: var(--color-accent);
+  margin-top: var(--gap-m);
+  margin-bottom: var(--gap-m);
+  margin: var(--gap-m) auto;
+}
+.food-menu__courses p:first-of-type {
+  margin-bottom: var(--gap-xl);
+}
+.food-menu__courses p:last-of-type {
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+.food-menu__course {
+  margin: var(--gap-m) 0;
+}
+.food-menu__course::after {
+  content: url("assets/icons/icon-divider.svg");
+  display: block;
+  margin-top: var(--gap-s);
+}
+.food-menu__footer {
+  margin-top: var(--gap-xl);
+}
+.food-menu__button {
+  background-color: transparent;
+  color: var(--color-dark);
+  padding: 0.5rem 1.5rem;
+  border: 1px solid var(--color-dark-900);
+  border-radius: 0;
+  font-size: var(--font-size-2);
+  font-family: var(--font-serif);
+  font-weight: 400;
+  display: inline-block;
+  text-decoration: none;
+}
+.food-menu__button:hover {
+  background-color: var(--color-accent-800);
+  color: var(--color-dark-300);
 }
 
 /*# sourceMappingURL=style.css.map */
