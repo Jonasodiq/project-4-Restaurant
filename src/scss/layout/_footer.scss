@@ -1,0 +1,43 @@
+@use '../components/details';
+
+.site-footer {
+  @include details.frame;
+  background-color: var(--color-dark);
+  display: grid;
+  grid-template-columns: var(--grid-container);
+  padding: var(--section-gap) 0  var(--gap-m) 0;
+
+  &__inner {
+    grid-column: inner;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__branding {
+    @include details.separator($align: center);
+  }
+
+  &__content {
+    margin-bottom: var(--section-gap-inner);
+    text-align: center;
+    p {
+      color: var(--color-light);
+      &:first-of-type {
+        @include details.separatorDots;
+      }
+    }
+  }
+
+  &__copyright {
+    color: var(--color-dark-500);
+    text-align: center;
+  }
+}
+
+#map {
+  width: 100%;
+  height: 400px;
+  background-image: url(assets/images/map@2x.png);
+  background-size: cover;
+  background-position: center;
+}
