@@ -1,0 +1,65 @@
+@use "../../components/details";
+
+.contact {
+  display: grid;
+  grid-template-columns: var(--grid-container);
+  padding: var(--section-gap) 0;
+
+  &__inner {
+    grid-column: inner;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gap-l);
+  }
+}
+
+.contact-card {
+  @include details.frame($color: var(--color-dark-500));
+  background-color: var(--color-accent-700);
+  padding: var(--gap-m) var(--gap-m);
+  text-align: center;
+  max-width: 460px;
+  width: 100%;
+
+  &__title {
+    @include details.separator($align: center);
+    font-size: var(--font-size-4);
+  }
+
+  &__text {
+    @include details.separatorDots;
+    strong {
+      font-weight: 600;
+    }
+
+    &:last-of-type {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.contact-form {
+  padding: var(--gap-m) 0 var(--gap-m) var(--gap-l);
+  flex: 0 1 50%;
+
+  &__title {
+    @include details.separator;
+    font-size: var(--font-size-4);
+  }
+
+  input,
+  textarea {
+    margin-bottom: var(--gap-m);
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  &__row {
+    display: flex;
+    gap: var(--gap-l);
+  }
+}
