@@ -1,72 +1,62 @@
-@use '../../components/details';
-@use '../../components/buttons' as button;
+@use "../../components/details";
+@use "../../components/buttons" as button;
 
 .food-menu {
-    background-color: var(--color-accent-700);
-    display: grid;
-    grid-template-columns: var(--grid-container);
-    padding: var(--section-gap) 0;
+  background-color: var(--color-accent-700);
+  display: grid;
+  grid-template-columns: var(--grid-container);
+  padding: var(--section-gap) 0 calc(var(--section-gap) * 2);
 
+  &__inner {
+    @include details.frame($color: var(--color-dark));
+    grid-column: inner;
+    background-color: var(--color-light);
+    text-align: center;
+    padding: var(--section-gap) 2rem;
+  }
 
-    &__inner {
-        @include details.frame($color: var(--color-dark));
-        grid-column: inner;
-        background-color: var(--color-light);
-        text-align: center;
-        padding: var(--section-gap) 2rem;
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 30rem;
+    margin: 0 auto;
+  }
+
+  &__header {
+  }
+
+  &__title {
+    margin-top: 0;
+    @include details.separator($align: center);
+  }
+
+  &__courses {
+    p {
+      &:first-of-type {
+        margin-bottom: var(--gap-xl);
+      }
+
+      &:last-of-type {
+        font-family: var(--font-serif);
+        font-style: italic;
+      }
     }
+  }
 
-    &__content {
-        position: relative;
-        z-index: 2;
-        max-width: 30rem;
-        margin: 0 auto;
-    }
+  &__course {
+    margin: var(--gap-m) 0;
+    @include details.separatorDots;
+  }
 
-    &__header {
+  &__footer {
+    margin-top: var(--gap-xl);
+  }
 
-    }
-
-    &__title {
-        margin-top: 0;
-        @include details.separator($align: center);
-    }
-
-    &__courses {
-        p {
-
-            &:first-of-type {
-                margin-bottom: var(--gap-xl);
-            }
-
-            &:last-of-type {
-                font-family: var(--font-serif);
-                font-style: italic;
-            }
-        }
-
-    }
-
-    &__course {
-       margin: var(--gap-m) 0;
-        &::after {
-            content: url('assets/icons/icon-divider.svg');
-            display: block;
-            margin-top: var(--gap-s);
-        }
-    }
-
-    &__footer {
-        margin-top: var(--gap-xl);
-
-    }
-
-    &__button {
-        @include button.default(
-            $color: var(--color-dark), 
-            $border-color: var(--color-dark-900),
-            $hover-background: var(--color-accent-800)
-        );
-
-    }
+  &__button {
+    @include button.default(
+      $color: var(--color-dark),
+      $border-color: var(--color-dark-900),
+      $hover-background: var(--color-accent-800)
+    );
+  }
 }
