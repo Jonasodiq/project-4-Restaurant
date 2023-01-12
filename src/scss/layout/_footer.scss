@@ -1,4 +1,5 @@
 @use '../components/details';
+@use '../utilities/responsive';
 
 .site-footer {
   @include details.frame;
@@ -31,6 +32,15 @@
   &__copyright {
     color: var(--color-dark-500);
     text-align: center;
+  }
+
+  @include responsive.max(40rem) {
+    padding-right: var(--gap-m);
+    padding-left: var(--gap-m);
+
+    &__copyright {
+      font-size: 0.85rem;
+    }
   }
 }
 

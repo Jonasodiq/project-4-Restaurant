@@ -9,12 +9,15 @@
     margin-top: calc(var(--section-gap) * -1);
     grid-column: inner;
     display: flex;
+    flex-wrap: wrap;
     gap: var(--gap-l);
   }
 
   &__item {
+    flex: 1;
     @include details.frame;
     aspect-ratio: 1 / 1;
+    min-width: 200px;
 
     img {
       width: 100%;

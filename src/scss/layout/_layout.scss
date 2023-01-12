@@ -1,1 +1,8 @@
+@use '../utilities/responsive';
 
+.container {
+    @include responsive.max(30rem) {
+        --section-gap: 6rem;
+        --section-gap-inner: 4rem;
+    }
+}

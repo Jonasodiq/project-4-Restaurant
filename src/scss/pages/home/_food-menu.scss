@@ -1,5 +1,6 @@
 @use "../../components/details";
 @use "../../components/buttons" as button;
+@use '../../utilities/responsive';
 
 .food-menu {
   background-color: var(--color-accent-700);
@@ -44,6 +45,10 @@
   }
 
   &__course {
+    @include responsive.max(30rem) {
+      --gap-s: 0rem;
+      --gap-m: 1rem;
+    }
     margin: var(--gap-m) 0;
     @include details.separatorDots;
   }
