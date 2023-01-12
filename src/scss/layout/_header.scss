@@ -19,7 +19,7 @@
     }
 
     &__button {
-        @include button.default;
+        @include button.default ($border-color: var(--color-accent));
     }
 
 }
