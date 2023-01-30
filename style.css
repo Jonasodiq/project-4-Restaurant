@@ -1,6 +1,6 @@
 :root {
   --section-gap: 8rem;
-  --section-gap-inner: calc( var(--section-gap) * 0.75);
+  --section-gap-inner: calc(var(--section-gap) * 0.75);
   --gap-xl: 4rem;
   --gap-l: 3rem;
   --gap-m: 2rem;
@@ -216,6 +216,9 @@ li {
   background-color: var(--color-accent);
   color: var(--color-dark-300);
 }
+.site-header__button--menu-opened {
+  display: none;
+}
 
 .menu-button {
   height: 26px;
@@ -226,16 +229,16 @@ li {
   border: 0;
   border-radius: 0;
 }
-.menu-button:focus .menu-button__hamburger, .menu-button--close .menu-button__hamburger {
+.menu-button--close .menu-button__hamburger {
   transition: transform 0.2s 0.2s;
   transform: rotate(45deg) translate(-50%, -50%);
 }
-.menu-button:focus .menu-button__hamburger:before, .menu-button--close .menu-button__hamburger:before {
+.menu-button--close .menu-button__hamburger:before {
   transition: top 0.2s, transform 0.2s 0.2s;
   transform: rotate(90deg);
   top: 0;
 }
-.menu-button:focus .menu-button__hamburger:after, .menu-button--close .menu-button__hamburger:after {
+.menu-button--close .menu-button__hamburger:after {
   transition: width 0.2s;
   width: 0;
 }
@@ -269,14 +272,17 @@ li {
 }
 
 .site-menu {
-  display: none;
   position: relative;
+  display: grid;
   background-color: var(--color-dark);
   position: fixed;
   width: 100vw;
   height: 100vh;
   z-index: 99;
   grid-template-columns: var(--grid-container);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
 }
 .site-menu::after {
   content: "";
@@ -290,7 +296,13 @@ li {
   opacity: 0.34;
 }
 .site-menu--visible {
-  display: grid;
+  opacity: 1;
+  visibility: visible;
+}
+.site-menu--visible .site-menu__inner {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.5s, opacity 0.7s;
 }
 .site-menu__inner {
   grid-column: inner;
@@ -301,6 +313,8 @@ li {
   flex-direction: column;
   position: relative;
   z-index: 2;
+  transform: translateY(100px);
+  opacity: 0;
 }
 .site-menu__list {
   margin: var(--section-gap-inner) 0 0 0;

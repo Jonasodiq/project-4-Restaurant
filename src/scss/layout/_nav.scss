@@ -1,17 +1,27 @@
 @use '../components/details';
 
 .site-menu {
-    display: none;
     @include details.frame;
+    display: grid;
     background-color: var(--color-dark);
     position: fixed;
     width: 100vw;
     height: 100vh;
     z-index: 99;
     grid-template-columns: var(--grid-container);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
 
     &--visible {
-        display: grid;
+        opacity: 1;
+        visibility: visible;
+
+        .site-menu__inner {
+            opacity: 1;
+            transform: translateY(0);
+            transition: transform 0.5s, opacity 0.7s;
+        }
     }
 
     &__inner {
@@ -23,6 +33,8 @@
         flex-direction: column;
         position: relative;
         z-index: 2;
+        transform: translateY(100px);
+        opacity: 0;
     }
 
     &__list {
