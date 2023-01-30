@@ -192,6 +192,34 @@ li {
   display: flex;
   align-items: center;
   padding: 0 32px;
+  transition: all 0.3s;
+}
+.site-header--scroll {
+  background-color: var(--color-dark);
+  height: 80px;
+}
+.site-header--scroll:after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-accent);
+  opacity: 0.34;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.site-header--scroll .site-header__branding {
+  visibility: visible;
+  opacity: 1;
+}
+.site-header--scroll .site-header__button {
+  display: none;
+}
+.site-header__branding {
+  transition: all 0.2s;
+  visibility: hidden;
+  opacity: 0;
+  line-height: 1;
 }
 .site-header__content {
   margin-left: auto;
