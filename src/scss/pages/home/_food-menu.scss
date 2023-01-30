@@ -23,8 +23,8 @@
     margin: 0 auto;
   }
 
-  &__header {
-  }
+  // &__header {
+  // }
 
   &__title {
     margin-top: 0;
@@ -49,6 +49,7 @@
       --gap-s: 0rem;
       --gap-m: 1rem;
     }
+
     margin: var(--gap-m) 0;
     @include details.separatorDots;
   }

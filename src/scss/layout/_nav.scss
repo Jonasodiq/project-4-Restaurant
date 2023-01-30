@@ -1,0 +1,49 @@
+@use '../components/details';
+
+.site-menu {
+    display: none;
+    @include details.frame;
+    background-color: var(--color-dark);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    grid-template-columns: var(--grid-container);
+
+    &--visible {
+        display: grid;
+    }
+
+    &__inner {
+        grid-column: inner;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__list {
+        margin: var(--section-gap-inner) 0 0 0;
+        padding: 0;
+        list-style: none;
+        @include details.separatorDots;
+    }
+
+    &__link {
+        color: var(--color-accent);
+        opacity: 0.8;
+        font-family: serif;
+        font-size: var(--font-size-5);
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &__contact {
+        color: var(--color-dark-700);
+    }
+}
