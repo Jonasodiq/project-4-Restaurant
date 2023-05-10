@@ -1,0 +1,20 @@
+.page {
+    margin-top: var(--section-gap);
+    display: grid;
+    grid-template-columns: var(--grid-container);
+
+    &__inner {
+        grid-column: inner;
+    }
+}
+
+.post {
+
+    &__header, 
+    &__content {
+        max-width: var(--content-width); // Remove this on content in WP    
+        margin: 0 auto;
+
+    }
+
+}

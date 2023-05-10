@@ -16,7 +16,7 @@
 <body>
   <div class="container">
     <!-- Site Header -->
-    <header class="site-header">
+    <header class="site-header site-header--page">
       <a href="index.html" class="site-header__branding">
         <img src="assets/images/logo.svg" alt="logo" />
       </a>
@@ -51,108 +51,35 @@
       </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero__content">
-        <figure class="hero__branding">
-          <img src="assets/images/logo.svg" alt="logo" />
-        </figure>
-      </div>
-    </section>
+    <!-- Page -->
+    <main class="page">
 
-    <!-- About -->
-    <section class="about">
-      <div class="about__inner">
-        <article class="about__content">
-          <header class="about__header">
-            <h2 class="about__title">
-              En italiensk pärla med en twist i centrala Örebro
-            </h2>
-          </header>
-          <div class="about__excerpt">
-            <p>
-              Suspendisse pretium sagittis elit, sit amet malesuada ante
-              dignissim id. Nulla sed leo lorem. Sed malesuada blandit ipsum,
-              sed congue neque. Praesent ut dapibus diam. Proin molestie risus
-              vitae metus sodales, ut luctus leo tincidunt. Nulla et elit id
-              mauris porta interdum sit amet at urna. Sed pharetra scelerisque
-              lacus, ut molestie arcu varius et.
-            </p>
-          </div>
-          <footer class="about__footer">
-            <div class="about__buttons">
-              <a href="#contact" class="about__button">Boka bord</a>
-              <a href="#food-menu" class="about__button">Vår meny</a>
-            </div>
-          </footer>
-        </article>
+        <div class="page__inner">
+            <article class="post post-type--page">
 
-        <!-- About image -->
-        <figure class="about__image">
-          <img src="assets/images/Image3@2x.jpg" alt="" />
-          <div class="black-box"></div>
-        </figure>
-      </div>
-    </section>
+                <header class="post__header">
+                    <h1 class="post__title">Om oss</h1>
+                </header>
 
-    <!-- Food menu -->
-    <section id="food-menu" class="food-menu">
-      <div class="food-menu__inner">
-        <div class="food-menu__content">
-          <header class="food-menu__header">
-            <h2 class="food-menu__title">
-              En avsmakningsmeny i höstens färger
-            </h2>
-          </header>
+                <div class="post__content">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae maiores, voluptates iure quam dicta minima unde omnis voluptate est molestias. Minus modi quae voluptate, aspernatur eos veniam est atque earum.
+                    Quae quidem fuga omnis sunt vitae, quo veritatis voluptates aut nemo sed nostrum accusantium. Earum dicta fuga, atque sint inventore facere modi quis iure magni quae consequatur ad totam quibusdam.
+                    Voluptatum, harum corporis quas ut beatae quisquam in optio facilis minima molestias nesciunt expedita. Aliquam labore, quia eveniet molestias explicabo corrupti eos repellat enim doloremque molestiae voluptatibus dolores, facilis reprehenderit.
+                    Totam ullam iste odit tempora, perspiciatis quis inventore numquam! In odit consequuntur voluptates ut. Laboriosam vero quibusdam accusantium magni possimus unde repellendus, temporibus nostrum dicta alias accusamus, obcaecati sequi tempore.
+                    Tempora et eveniet libero. Pariatur, commodi eum inventore error quod quisquam, velit nisi, corporis sequi vero hic! Quam quas vel sequi voluptatem ipsa nostrum, dicta laboriosam consequuntur pariatur. Delectus, earum.
+                    </p>
 
-          <div class="food-menu__courses">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Pellentesque rhoncus libero et commodo vehicula.
-            </p>
-            <p class="food-menu__course">
-              Ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-              rhoncus libero et commodo
-            </p>
-            <p class="food-menu__course">
-              Dolor sit amet, consectetur adipiscing elit. Pellentesque
-              rhoncus libero et commodo
-            </p>
-            <p class="food-menu__course">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Pellentesque rhoncus libero et commodo
-            </p>
-            <p class="food-menu__course">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Pellentesque rhoncus libero et commodo
-            </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
+                </div>
+                <footer class="post__footer">
 
-          <footer class="food-menu__footer">
-            <a href="#contact" class="food-menu__button">Boka bord</a>
-          </footer>
+                </footer>
+
+            </article>
         </div>
-      </div>
-    </section>
-
-    <!-- Gallery -->
-    <section class="gallery">
-      <div class="gallery__inner">
-        <figure class="gallery__item">
-          <img src="assets/images/Image4@2x.jpg" alt="" />
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/images/Image1@2x.jpg" alt="" />
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/images/Image2@2x.jpg" alt="" />
-        </figure>
-      </div>
-    </section>
+    </main>
 
     <!-- Contact -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact contact--page">
       <div class="contact__inner">
         <!-- Contact Card -->
         <div class="contact-card">
@@ -173,26 +100,7 @@
           </p>
         </div>
 
-        <!-- Contact Form -->
-        <div class="contact-form">
-          <h2 class="contact-form__title">Boka bord</h2>
-          <form action="" class="contact-form__form">
-            <input type="text" name="name" id="" placeholder="Namn:*" required />
-            <div class="contact-form__row">
-              <input type="number" name="number-of-persons" placeholder="Antal personer:*" min="1" max="20" required />
-              <input type="datetime-local" name="datatime" id="" placeholder="Dag & Tid:*" required />
-            </div>
-            <div class="contact-form__row">
-              <input type="tel" name="phone" id="" placeholder="Telefon:*" required />
-              <input type="email" name="email" id="" placeholder="Epost:*" required />
-            </div>
-            <textarea name="textarea" id="" cols="30" rows="3" placeholder="Övriga upplysning"></textarea>
-            <button type="submit">Skicka förfrågan</button>
-          </form>
-        </div>
-      </div>
     </section>
-
     <!-- Map -->
     <div id="map"></div>
 
@@ -223,7 +131,8 @@
         </div>
       </div>
     </footer>
-  </div>
+  
+</div>
 </body>
 
 </html>

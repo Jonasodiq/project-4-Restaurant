@@ -38,6 +38,20 @@
         }
     }
 
+    &--page {
+        background-color: var(--color-dark);
+        height: 80px;
+
+        .site-header__branding {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .site-header__button {
+            display: block;
+        }
+    }
+
     &__branding {
         transition: all 0.2s;
         visibility: hidden;

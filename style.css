@@ -44,6 +44,7 @@
   --font-size-4: calc(var(--font-size-3) * var(--font-scale));
   --font-size-5: calc(var(--font-size-4) * var(--font-scale));
   --font-size-6: calc(var(--font-size-5) * var(--font-scale));
+  --content-width: 55rem;
   --page-width: 72rem;
   --grid-container: [full-start] minmax(32px, 1fr) [inner-start] minmax(0, var(--page-width)) [inner-end] minmax(32px, 1fr) [full-end];
 }
@@ -214,6 +215,17 @@ li {
 }
 .site-header--scroll .site-header__button {
   display: none;
+}
+.site-header--page {
+  background-color: var(--color-dark);
+  height: 80px;
+}
+.site-header--page .site-header__branding {
+  visibility: visible;
+  opacity: 1;
+}
+.site-header--page .site-header__button {
+  display: block;
 }
 .site-header__branding {
   transition: all 0.2s;
@@ -770,6 +782,9 @@ li {
     flex-direction: column;
   }
 }
+.contact--page .contact-card {
+  max-width: 100%;
+}
 
 .contact-card {
   position: relative;
@@ -874,6 +889,20 @@ li {
   .contact-form__row {
     display: block;
   }
+}
+
+.page {
+  margin-top: var(--section-gap);
+  display: grid;
+  grid-template-columns: var(--grid-container);
+}
+.page__inner {
+  grid-column: inner;
+}
+
+.post__header, .post__content {
+  max-width: var(--content-width);
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=style.css.map */
