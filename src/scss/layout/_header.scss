@@ -2,142 +2,140 @@
 @use '../components/details';
 
 .site-header {
-    position: fixed;
-    z-index: 999;
-    height: 100px;
-    width: 100%;
-    left: 0;
-    top: 0;
+  position: fixed;
+  z-index: 999;
+  height: 100px;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  transition: all 0.3s;
+
+  &--scroll {
+    background-color: var(--color-dark);
+    height: 80px;
+
+    &:after {
+      content: '';
+      height: 1px;
+      width: 100%;
+      background-color: var(--color-accent);
+      opacity: 0.34;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    .site-header__branding {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .site-header__button {
+      display: none;
+    }
+  }
+
+  &--page {
+    background-color: var(--color-dark);
+    height: 80px;
+
+    .site-header__branding {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .site-header__button {
+      display: block;
+    }
+  }
+
+  &__branding {
+    transition: all 0.2s;
+    visibility: hidden;
+    opacity: 0;
+    line-height: 1;
+
+    & img {
+      width: 50px;
+    }
+  }
+
+  &__content {
+    margin-left: auto;
     display: flex;
     align-items: center;
-    padding: 0 32px;
-    transition: all 0.3s;
+    gap: var(--gap-m);
+  }
 
-    &--scroll {
-        background-color: var(--color-dark);
-        height: 80px;
+  &__button {
+    @include button.default($border-color: var(--color-accent));
 
-        &:after {
-            content: '';
-            height: 1px;
-            width: 100%;
-            background-color: var(--color-accent);
-            opacity: 0.34;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-        }
-
-        .site-header__branding {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .site-header__button {
-            display: none;
-        }
+    &--menu-opened {
+      display: none;
     }
-
-    &--page {
-        background-color: var(--color-dark);
-        height: 80px;
-
-        .site-header__branding {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .site-header__button {
-            display: block;
-        }
-    }
-
-    &__branding {
-        transition: all 0.2s;
-        visibility: hidden;
-        opacity: 0;
-        line-height: 1;
-    }
-
-    &__content {
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-        gap: var(--gap-m);
-    }
-
-    &__button {
-        @include button.default ($border-color: var(--color-accent));
-
-        &--menu-opened {
-            display: none;
-        }
-    }
-
+  }
 }
 
 .menu-button {
-    height: 26px;
-    width: 26px;
-    position: relative;
-    background: none;
-    padding: 0;
-    border: 0;
-    border-radius: 0;
+  height: 26px;
+  width: 26px;
+  position: relative;
+  background: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
 
-    &--close {
+  &--close {
+    .menu-button__hamburger {
+      transition: transform 0.2s 0.2s;
+      transform: rotate(45deg) translate(-50%, -50%);
 
-        .menu-button__hamburger {
+      &:before {
+        transition: top 0.2s, transform 0.2s 0.2s;
+        transform: rotate(90deg);
+        top: 0;
+      }
 
-            transition: transform 0.2s 0.2s;
-            transform: rotate(45deg) translate(-50%, -50%);
+      &:after {
+        transition: width 0.2s;
+        width: 0;
+      }
+    }
+  }
 
-            &:before {
-                transition: top 0.2s, transform 0.2s 0.2s;
-                transform: rotate(90deg);
-                top: 0;
-            }
+  &__hamburger {
+    transform-origin: left top;
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transition: transform 0.2s;
+    transform: translate(-50%, -50%) rotate(0);
+    background-color: var(--color-accent);
 
-            &:after {
-                transition: width 0.2s;
-                width: 0;
-            }
-
-        }
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -8px;
+      height: 1px;
+      width: 100%;
+      background-color: inherit;
     }
 
-    &__hamburger {
-
-        transform-origin: left top;
-        position: absolute;
-        height: 1px;
-        width: 100%;
-        top: 50%;
-        left: 50%;
-        transition: transform 0.2s;
-        transform: translate(-50%, -50%) rotate(0);
-        background-color: var(--color-accent);
-
-        &:before,
-        &:after {
-            content: '';
-            display: block;
-            position: absolute;
-            top: -8px;
-            height: 1px;
-            width: 100%;
-            background-color: inherit;
-        }
-
-        &:before {
-            transition: top 0.2s 0.2s, transform 0.2s;
-        }
-
-        &:after {
-            top: 8px;
-            width: 70%;
-            transition: width 0.2s 0.2s;
-        }
-
+    &:before {
+      transition: top 0.2s 0.2s, transform 0.2s;
     }
+
+    &:after {
+      top: 8px;
+      width: 70%;
+      transition: width 0.2s 0.2s;
+    }
+  }
 }

@@ -6,7 +6,7 @@
   background-color: var(--color-dark);
   display: grid;
   grid-template-columns: var(--grid-container);
-  padding: var(--section-gap) 0  var(--gap-m) 0;
+  padding: var(--section-gap) 0 var(--gap-m) 0;
 
   &__inner {
     grid-column: inner;
@@ -16,6 +16,10 @@
 
   &__branding {
     @include details.separator($align: center);
+
+    & img {
+      width: 50px;
+    }
   }
 
   &__content {
