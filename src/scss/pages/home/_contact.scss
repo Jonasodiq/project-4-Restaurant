@@ -1,4 +1,4 @@
-@use "../../components/details";
+@use '../../components/details';
 @use '../../utilities/responsive';
 
 .contact {
@@ -11,10 +11,10 @@
     display: flex;
     justify-content: space-between;
     gap: var(--gap-l);
-    
+
     // 1024
     @include responsive.max(64rem) {
-        flex-direction: column;
+      flex-direction: column;
     }
   }
 
@@ -53,8 +53,8 @@
 
   // 1024
   @include responsive.max(64rem) {
-      flex: 1;
-      max-width: 100%;
+    flex: 1;
+    max-width: 100%;
   }
 }
 
