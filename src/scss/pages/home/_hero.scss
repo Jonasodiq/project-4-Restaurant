@@ -1,33 +1,37 @@
 @use '../../components/details';
 
 .hero {
-   min-height: 100vh;
-   background: url(assets/images/hero-background@2x.jpg) no-repeat;
-   background-size: cover;
-   background-position: center center;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  min-height: 100vh;
+  background: url(assets/images/hero-background@2x.jpg) no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-   &__content {
-        background: var(--color-dark);
-        max-width: 330px;
-        max-height: 330px;
-        aspect-ratio: 1 / 1;  // CSS-egenskapen bildförhållande anger ett föredraget bildförhållande för rutan, som kommer att användas vid beräkning av automatiska storlekar och vissa andra layoutfunktioner.
-        width: 100%;
-        margin: 0 32px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+  &__content {
+    background: var(--color-dark);
+    max-width: 330px;
+    max-height: 330px;
+    aspect-ratio: 1 / 1; // CSS-egenskapen bildförhållande anger ett föredraget bildförhållande för rutan, som kommer att användas vid beräkning av automatiska storlekar och vissa andra layoutfunktioner.
+    width: 100%;
+    margin: 0 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-        @include details.frame();
+    @include details.frame();
+  }
+
+  &__branding {
+    $margin: 1.5rem;
+
+    margin: $margin 0 0 0;
+    @include details.separator(center, $margin);
+
+    & img {
+      width: 100px;
     }
-
-   &__branding {
-        $margin: 1.5rem;
-
-        margin: $margin 0 0 0;
-        @include details.separator(center, $margin);
-   }
+  }
 }
